@@ -1,15 +1,46 @@
-<html>
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0; padding: 0;">
 
 <head>
-	<title>Sigma Public Embed Sample</title>
+    <title>Sigma Embedding - Secure</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Make the body a flex container */
+            flex-direction: column; /* Stack flex items vertically */
+        }
+        h2 {
+            /* Optional: Add style for the header if needed */
+            margin: 0; /* Remove default margin */
+            padding: 10px; /* Add some padding for aesthetics */
+            text-align: center; /* Center the header text */
+            background: #f0f0f0; /* Background color for the header */
+        }
+        iframe {
+            flex-grow: 1; /* Allow the iframe to fill the available space */
+            width: 100%; /* Full width */
+            border: none; /* Remove the iframe border */
+        }
+    </style>
 </head>
 
 <body>
+	<h2>Sigma - Public Embed Sample</h2>
 
-<h2>Sigma - Public Embed Sample</h2>
-
-<iframe src="https://app.sigmacomputing.com/embed/6ZUZyQOU4stBNidP17hfhD" frameborder="0" width="100%" height="100%"></iframe>
-
+	<iframe src="https://app.sigmacomputing.com/embed/07VMTJdsq6PKIiubhHapP" frameborder="0" width="20%" height="20%"></iframe>
+    <h2>Sigma - Secure Embed Sample</h2>
+    <iframe id="sigmaDashboard" frameborder="0" width="60%" height="20%"></iframe>
+    <script>
+        const URL = "http://localhost:3000/api/generate-embed-url";
+        fetch(URL)
+        .then(data => data.json())
+        .then(res => {
+            document.getElementById("sigmaDashboard").src = res.url;
+        })
+        .catch(e => console.log(e));
+    </script>
 </body>
 
 </html>
