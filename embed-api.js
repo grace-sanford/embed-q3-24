@@ -1,5 +1,5 @@
 // SIGMA SERVER-SIDE EMBED API - SECURE QUICKSTART
-
+require('dotenv').config()
 // 1: Require necessary Node.js modules
 const express = require('express');
 const crypto = require('crypto');
