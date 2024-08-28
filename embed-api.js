@@ -35,7 +35,7 @@ function generate_embed_url(request, response)
 
 // 5: Define a route handler for generating Sigma embed URLs
 app.get('/api/generate-embed-url', (req, res) => {
-    try {
+    try { 
         //Generate a unique nonce using crypto's UUID
         const nonce = crypto.randomUUID();
         let searchParams = `?:nonce=${nonce}`;
@@ -48,7 +48,7 @@ app.get('/api/generate-embed-url', (req, res) => {
         searchParams += '&:account_type=Creator';
         searchParams += '&:mode=userbacked';
         searchParams += '&:session_length=600';
-		searchParams += '&:ua_Attr1=600';
+		searchParams += '&:ua_grace-edit-attr-test=value';
         searchParams += `&:time=${Math.floor(new Date().getTime() / 1000)}`;
 
         // 7: Construct the URL with search parameters and generate a signature
