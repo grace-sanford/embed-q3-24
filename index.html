@@ -4,24 +4,36 @@
 <head>
     <title>Sigma Embedding - Secure</title>
     <style>
-        body, html {
+        body,
+        html {
             height: 100%;
             margin: 0;
             padding: 0;
-            display: flex; /* Make the body a flex container */
-            flex-direction: column; /* Stack flex items vertically */
+            display: flex;
+            /* Make the body a flex container */
+            flex-direction: column;
+            /* Stack flex items vertically */
         }
+
         h2 {
             /* Optional: Add style for the header if needed */
-            margin: 0; /* Remove default margin */
-            padding: 10px; /* Add some padding for aesthetics */
-            text-align: center; /* Center the header text */
-            background: #f0f0f0; /* Background color for the header */
+            margin: 0;
+            /* Remove default margin */
+            padding: 10px;
+            /* Add some padding for aesthetics */
+            text-align: center;
+            /* Center the header text */
+            background: #f0f0f0;
+            /* Background color for the header */
         }
+
         iframe {
-            flex-grow: 1; /* Allow the iframe to fill the available space */
-            width: 100%; /* Full width */
-            border: none; /* Remove the iframe border */
+            flex-grow: 1;
+            /* Allow the iframe to fill the available space */
+            width: 100%;
+            /* Full width */
+            border: none;
+            /* Remove the iframe border */
         }
     </style>
 </head>
@@ -32,11 +44,11 @@
     <script>
         const URL = "http://localhost:3000/api/generate-embed-url";
         fetch(URL)
-        .then(data => data.json())
-        .then(res => {
-            document.getElementById("sigmaDashboard").src = res.url;
-        })
-        .catch(e => console.log(e));
+            .then(data => data.json())
+            .then(res => {
+                document.getElementById("sigmaDashboard").src = res.url;
+            })
+            .catch(e => console.log(e));
     </script>
 </body>
 
@@ -50,34 +62,103 @@
             width: 100%;
             height: 100%;
             background-color: lightgray;
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
             padding: 10px;
             margin-top: 10px;
         }
     </style>
+
+
 </head>
+
 <body>
 
-<button onclick="toggleDiv()">Sigma - Public Embed Sample</button>
+    <button onclick="toggleDiv()">Sigma - Public Embed Sample</button>
 
-<div id="myDiv">
-	<iframe src="https://app.sigmacomputing.com/embed/07VMTJdsq6PKIiubhHapP" frameborder="0" width="100%" height="100%"></iframe>
-</div>
-<div>
-    
-</div>
+    <div id="myDiv">
+        <iframe src="https://app.sigmacomputing.com/embed/07VMTJdsq6PKIiubhHapP" frameborder="0" width="100%"
+            height="100%"></iframe>
+    </div>
+    <div>
 
-<script>
-    function toggleDiv() {
-        let x = document.getElementById("myDiv");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
+    </div>
+
+
+    <script>
+        function toggleDiv() {
+            let x = document.getElementById("myDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
 
 </html>
+
+
+<!-- Outbound -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Sigma Embedding - Events: Outbound</title>
+	
+	
+</head>
+
+	<-- Script to Add Event Listener to Parent Application -->
+<!-- <script>
+		window.addEventListener('message', function (event) {
+			if (
+			// The value returned from to the iframe from server.js "sigmaDashboard" is placed into event.source 
+			event.source === document.getElementById('sigmaDashboard').contentWindow &&
+	  		event.origin === "https://app.sigmacomputing.com"
+			) 
+			{
+			const SigmaMessage=event.data; // the output
+				
+	// Logic to prevent errors in the console due to Embed not being fully loaded when Parent is fully loaded:
+	if (SigmaMessage.type == "workbook:variables:onchange"){
+		let RomanNumerals = document.getElementById("RomanNumerals").value=SigmaMessage.workbook.variables.RomanNumeral;
+		console.log("user changed embed filters");
+		console.log(SigmaMessage);	
+		}
+			else if (SigmaMessage.type == "workbook:loaded"){
+				let RomanNumerals = document.getElementById("RomanNumerals").value=SigmaMessage.workbook.variables.RomanNumeral;
+				console.log("workbook is loading");
+				console.log(SigmaMessage);	
+		} 
+	}});
+</script>
+
+</head>
+
+ <body style="background-color:#E3F4F4;">
+	<h2>Sigma Embedding - Events: Outbound</h2>
+
+	<h2>My Parent Application</h2> -->
+<!-- <lable>The Embed user selected these Roman Numerals to Filter:</lable> -->
+
+<!-- Display the current values for the Embedded droplist filter-->
+<!-- <input type="text" id="RomanNumerals" style="width: 300px" style="height: 500px">
+	<br><br> -->
+
+<!--- Setup iframe for Sigma Embed to render in -->
+<!-- <iframe id="sigmaDashboard" width="700px" height="700px"></iframe>
+		<script>
+			 const sigmaDashboard = document.getElementById('sigmaDashboard');
+			 const URL = "http://localhost:3000/api/generate-embed-url";
+		     // URL below comes from API call to server.js -->
+<!-- fetch(URL)
+			 .then(data=>{return data.json()})
+			 // Set the response url to "sigmaDashboard. This object used in the scripts"
+			 .then(res=>{document.getElementById("sigmaDashboard").src = res.url})
+			 .catch(e=>console.log(e));
+		</script>
+
+	 </body> -->
+<!-- </html>   -->
