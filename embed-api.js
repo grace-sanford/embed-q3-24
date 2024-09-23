@@ -44,7 +44,7 @@ app.get('/api/generate-embed-url', (req, res) => {
         searchParams += `&:client_id=${CLIENT_ID}`;
         searchParams += '&:email=gracesanford@protonmail.com';
         searchParams += '&:external_user_id=g1';
-        searchParams += '&:external_user_team=Grace%20Test%20Team';
+        searchParams += '&:external_user_team=Grace%20Test%20Embed%20Team';
         searchParams += '&:account_type=Creator';
         searchParams += '&:mode=userbacked';
         searchParams += '&:session_length=600';
@@ -108,7 +108,7 @@ app.listen(PORT, () => {
 //         searchParams += `&:client_id=${CLIENT_ID}`;
 //         searchParams += '&:email=sales_manager1@sigmacomputing.com';
 //         searchParams += '&:external_user_id=gracesanford@protonmail.com';
-//         searchParams += '&:external_user_team=Grace%20Test%20Team';
+//         searchParams += '&:external_user_team=Grace%20Test%20Embed%20Team';
 //         searchParams += '&:account_type=Creator';
 //         searchParams += '&:mode=userbacked';
 //         searchParams += '&:session_length=600';
