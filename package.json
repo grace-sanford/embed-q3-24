@@ -4,7 +4,9 @@
   "main": "embed-api.js",
   "scripts": {
     "start": "supervisor embed-api.js",
-    "events": "supervisor events/embed-api.js",
+    "events-inbound": "supervisor events/embed-api-inbound-event.js",
+    "events-outbound": "supervisor events/embed-api-outbound-event.js",
+    "events-api-server-side": "supervisor events/embed-api-server-side-event.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

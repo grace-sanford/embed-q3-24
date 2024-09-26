@@ -1,10 +1,8 @@
-<!-- // ------------------- SERVER SIDE API start ----------------- //  -->
-
 <!DOCTYPE html>
 <html style="height: 100%; margin: 0; padding: 0;">
 
 <head>
-    <title>Sigma Embedding - Events: URL</title>
+    <title>Sigma Embedding - Events: Inbound</title>
     <style>
         body, html {
             height: 100%;
@@ -29,18 +27,21 @@
 </head>
 
 <body>
-    <h2>Sigma - Embedded Events: URL</h2>
+    <h2>Sigma - Events: Inbound</h2>
     <iframe id="sigmaDashboard" frameborder="0"></iframe>
     <script>
-        const URL = "http://localhost:3000/api/generate-embed-url-server-side-event";
+        const URL = "http://localhost:3000/api/generate-embed-url-inbound-event";
         fetch(URL)
         .then(data => data.json())
         .then(res => {
             document.getElementById("sigmaDashboard").src = res.url;
         })
         .catch(e => console.log(e));
+        // Paste into browser console
+        // const sigma_iframe = document.getElementById('sigmaDashboard');
+        // sigma_iframe.contentWindow.postMessage({type:"workbook:variables:update", variables: {StoreRegion: "West"},}, 'https://app.sigmacomputing.com',);
     </script>
 </body>
 
 </html>
-<!-- // ------------------- SERVER SIDE API end ----------------- //  -->
+
