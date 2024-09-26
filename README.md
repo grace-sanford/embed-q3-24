@@ -12,3 +12,4 @@ There's a public team called [Grace Test Embed Team](https://app.sigmacomputing.
 - Run `npm install` to install packages and dependencies
 - Using the variables defined in the `.sample.env` file of this repo, configure your own `.env` file 
 - Run `npm start` command to start up the server. node-supervisor should watch files for changes, but if you need to restart the server run `rs`
+- Run `npm start events` command to test code in the `/events` directory

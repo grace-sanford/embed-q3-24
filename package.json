@@ -4,6 +4,7 @@
   "main": "embed-api.js",
   "scripts": {
     "start": "supervisor embed-api.js",
+    "events": "supervisor events/embed-api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
