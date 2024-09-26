@@ -6,3 +6,9 @@ There's a public team called [Grace Test Embed Team](https://app.sigmacomputing.
 - try `grace's.sanford+8@sigmacomputing.com` to test encoding special characters in an embed URL
 - try `grace.sanford+9@sigmacomputing.com` to see what it looks like when an `Internal` Member tries to access an embed
 - try `grace.sanford+9@sigmacomputing.com` to see what it looks like when an `Guest` Member tries to access an embed
+
+## Set up
+- Clone this repo
+- Run `npm install` to install packages and dependencies
+- Using the variables defined in the `.sample.env` file of this repo, configure your own `.env` file 
+- Run `npm start` command to start up the server. node-supervisor should watch files for changes, but if you need to restart the server run `rs`
