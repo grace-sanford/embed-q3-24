@@ -16,3 +16,6 @@ There's a public team called [Grace Test Embed Team](https://app.sigmacomputing.
     - `npm start events-inbound`
     - `npm start events-outbound`
     - `npm start events-api-server-side`
+- Test code in the `/jwt` directory with
+    - `npm start jwt`
+- Follow instructions in the READ.md file in `/embed-sdk-react` to test out react sdk (run with `pnpm run dev` from _within the `/embed-sdk-react` directory_)
