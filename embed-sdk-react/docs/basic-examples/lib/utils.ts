@@ -57,7 +57,7 @@ export async function signEmbedUrl(dashboard: string): Promise<string> {
   const searchParamsObject = {
     ":mode": "userbacked",
     ":email": "demo@embed.com",
-    ":external_user_team": "Sales_People",
+    ":external_user_team": "Grace%27Test%27Embed%27Team",
     ":account_type": "viewer",
     ":nonce": uuid(),
     ":time": `${Math.floor(new Date().getTime() / 1000)}`,
