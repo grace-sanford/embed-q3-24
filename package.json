@@ -7,6 +7,7 @@
     "events-inbound": "supervisor events/embed-api-inbound-event.js",
     "events-outbound": "supervisor events/embed-api-outbound-event.js",
     "events-api-server-side": "supervisor events/embed-api-server-side-event.js",
+    "jwt": "supervisor jwt/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +15,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.10",
+    "express": "^4.17.1",
+    "jose": "^3.20.4",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^8.3.2"
   }
 }
