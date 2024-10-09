@@ -1,3 +1,5 @@
 .env
 .gitignore
 node_modules
+
+/embed-sdk-react/docs/basic-examples/.env

@@ -49,6 +49,7 @@ app.get('/api/generate-embed-url', (req, res) => {
         searchParams += '&:mode=userbacked';
         searchParams += '&:session_length=600';
 		searchParams += '&:ua_grace-edit-attr-test=value';
+		searchParams += '&:ua_GS_DRS_REGION=ENGINEERING%20-%20APPS';
         searchParams += `&:time=${Math.floor(new Date().getTime() / 1000)}`;
 		//-- Additional parameters start --//
 		//SET A VALUE FOR disable_mobile_view. Default=no.
@@ -58,9 +59,9 @@ app.get('/api/generate-embed-url', (req, res) => {
 		//SET A VALUE FOR first_name. Default=Embed.
 		// searchParams += '&:first_name=Bob';
 		//SET A VALUE FOR hide_folder_navigation. Default=false.
-		searchParams += '&:hide_folder_navigation=true';
+		searchParams += '&:hide_folder_navigation=false';
 		//HIDE THE MENU IN BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
-		searchParams += '&:hide_menu=true';
+		searchParams += '&:hide_menu=false';
 		//HIDE THE "SCHEDULE NOW" OPTION IN THE BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
 		searchParams += '&:hide_schedule=true';
 		//HIDE THE "SEND NOW" OPTION IN THE BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
@@ -82,7 +83,7 @@ app.get('/api/generate-embed-url', (req, res) => {
 		//ENABLE JAVASCRIPT EVENT FOR responsive_height. DEFAULT = "false".
 		searchParams += '&:responsive_height=true';
 		//SHOW FOOTER ON PAGE OR NOT. DEFAULT = "true".
-		searchParams += '&:show_footer=false';
+		searchParams += '&:show_footer=true';
 		//CHANGE THEME SIGMA WILL USE FOR THE EMBED. DEFAULT = "Light".
 		searchParams += '&:theme=Dark';
 		searchParams += '&:ua_Region=West';
