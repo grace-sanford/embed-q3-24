@@ -47,6 +47,7 @@ app.get('/api/generate-embed-url', (req, res) => {
         searchParams += '&:external_user_team=Grace%20Test%20Embed%20Team';
         searchParams += '&:account_type=Creator';
         searchParams += '&:mode=userbacked';
+		searchParams += '&Id-CONTROL=1'
         searchParams += '&:session_length=600';
 		searchParams += '&:ua_grace-edit-attr-test=value';
 		searchParams += '&:ua_GS_DRS_REGION=ENGINEERING%20-%20APPS';
@@ -55,7 +56,7 @@ app.get('/api/generate-embed-url', (req, res) => {
 		//SET A VALUE FOR disable_mobile_view. Default=no.
 		searchParams += '&:disable_mobile_view=yes';
 		//SET A VALUE FOR language. Default=en List of supported languages: https://help.sigmacomputing.com/docs/manage-workbook-localization#supported-languages-and-locales
-		searchParams += '&:lng=fa-ca';
+		//searchParams += '&:lng=fa-ca';
 		//SET A VALUE FOR first_name. Default=Embed.
 		// searchParams += '&:first_name=Bob';
 		//SET A VALUE FOR hide_folder_navigation. Default=false.
@@ -63,7 +64,7 @@ app.get('/api/generate-embed-url', (req, res) => {
 		//HIDE THE MENU IN BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
 		searchParams += '&:hide_menu=false';
 		//HIDE THE "SCHEDULE NOW" OPTION IN THE BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
-		searchParams += '&:hide_schedule=true';
+		//searchParams += '&:hide_schedule=false';
 		//HIDE THE "SEND NOW" OPTION IN THE BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
 		searchParams += '&:hide_send=true';
 		//HIDE SHEET INTERACTIONS OPTION FROM EMBED USERS. DEFAULT=false
@@ -79,7 +80,7 @@ app.get('/api/generate-embed-url', (req, res) => {
 		//SET A COLOR FOR THE FONT ON LOADING AND ERROR SCREENS 
 		searchParams += '&:loading_text=FFFFFF';
 		//SET THE POSITION OF THE TOOLBAR. DEFAULT = "bottom".
-		searchParams += '&:menu_position=top';
+		// searchParams += '&:menu_position=top';
 		//ENABLE JAVASCRIPT EVENT FOR responsive_height. DEFAULT = "false".
 		searchParams += '&:responsive_height=true';
 		//SHOW FOOTER ON PAGE OR NOT. DEFAULT = "true".
