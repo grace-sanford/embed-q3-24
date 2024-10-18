@@ -47,7 +47,8 @@ app.get('/api/generate-embed-url', (req, res) => {
         searchParams += '&:external_user_team=Grace%20Test%20Embed%20Team';
         searchParams += '&:account_type=Creator';
         searchParams += '&:mode=userbacked';
-		searchParams += '&Id-CONTROL=1'
+		searchParams += '&Id-CONTROL=1';
+		searchParams += '&Store-Region-control=East';
         searchParams += '&:session_length=600';
 		searchParams += '&:ua_grace-edit-attr-test=value';
 		searchParams += '&:ua_GS_DRS_REGION=ENGINEERING%20-%20APPS';
