@@ -1,20 +1,22 @@
 // SIGMA SERVER-SIDE EMBED API - SECURE QUICKSTART
+//https://quickstarts.sigmacomputing.com/guide/embedding_03_secure_access/index.html?index=..%2F..index#0
+
+// Require dotenv to bring in your env variables
 require('dotenv').config()
-// 1: Require necessary Node.js modules
+// Require necessary Node.js modules
 const express = require('express');
 const crypto = require('crypto');
 
-// 2: Initialize an Express application
+// Initialize an Express application
 const app = express();
 
-// 3: Manually set your configuration variables here (example values shown)
-//TODO: mask these
+// Manually set your configuration variables here (example values shown)
 const EMBED_PATH = process.env.EMBED_PATH;
 const CLIENT_ID = process.env.CLIENT_ID;
 const EMBED_SECRET = process.env.EMBED_SECRET;
-const PORT = process.env.PORT; // Feel free to change the port number as needed
+const PORT = process.env.PORT; 
 
-// 4: Server Setup
+// Server Setup
 app.get('/', (req, res) => {
     res.sendFile(`${__dirname}/index.html`); // Serve the main HTML file for the root path
 });
@@ -33,24 +35,28 @@ function generate_embed_url(request, response)
 	response.status(200).send({url:EMBED_PATH});
 }
 
-// 5: Define a route handler for generating Sigma embed URLs
+// Define a route handler for generating Sigma embed URLs
 app.get('/api/generate-embed-url', (req, res) => {
     try { 
         //Generate a unique nonce using crypto's UUID
         const nonce = crypto.randomUUID();
         let searchParams = `?:nonce=${nonce}`;
 
-        // 6: Construct required search parameters
+        // Construct required search parameters
         searchParams += `&:client_id=${CLIENT_ID}`;
         searchParams += '&:email=gracesanford@protonmail.com';
+		// Try un-commenting this email to see what it looks like when an internal user tries to access a secure embed
+		// searchParams += '&:email=grace.sanford+9@sigmacomputing.com';
         searchParams += '&:external_user_id=1';
+
+		// For encoding special characters see: https://help.sigmacomputing.com/docs/special-characters-for-url-parameters
         searchParams += '&:external_user_team=Grace%20Test%20Embed%20Team';
         searchParams += '&:account_type=Creator';
         searchParams += '&:mode=userbacked';
 		searchParams += '&Id-CONTROL=1';
 		searchParams += '&Store-Region-control=East';
         searchParams += '&:session_length=600';
-		searchParams += '&:ua_grace-edit-attr-test=value';
+		searchParams += '&:ua_Grace-Test-User-Attribute=This%20is%20the%20value%20of%20the%20user%20attribute%20Grace-Test-User-Attribute%20passed%20in%20the%20embed%20URL.%20UA%20values%20noramlly%20are%27t%20this%20long.%20Call%20it%20in%20the%20Sigma%20Workbook%20with%20CurrentUserAttributeText%28%22Grace-Test-User-Attribute%22%29';
 		searchParams += '&:ua_GS_DRS_REGION=ENGINEERING%20-%20APPS';
         searchParams += `&:time=${Math.floor(new Date().getTime() / 1000)}`;
 		//-- Additional parameters start --//
@@ -93,7 +99,6 @@ app.get('/api/generate-embed-url', (req, res) => {
 		// searchParams += '&:use_user_name=Bob Smith';
 		//PASSES A SECURE TOKEN TO SIGMA THAT AUTHENTICATES CONNECTIONS USING OAUTH
 		// searchParams += '&:oauth_token={token}';
-		// searchParams += `&Roman-Numeral-CONTROL=I`;
 
 		//-- Additional parameters end --//
 		
