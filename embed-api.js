@@ -59,7 +59,8 @@ app.get('/api/generate-embed-url', (req, res) => {
 		searchParams += '&:ua_Grace-Test-User-Attribute=This%20is%20the%20value%20of%20the%20user%20attribute%20Grace-Test-User-Attribute%20passed%20in%20the%20embed%20URL.%20UA%20values%20noramlly%20are%27t%20this%20long.%20Call%20it%20in%20the%20Sigma%20Workbook%20with%20CurrentUserAttributeText%28%22Grace-Test-User-Attribute%22%29';
 		searchParams += '&:ua_GS_DRS_REGION=ENGINEERING%20-%20APPS';
         searchParams += `&:time=${Math.floor(new Date().getTime() / 1000)}`;
-		//-- Additional parameters start --//
+
+		//-------------------------- Additional parameters start --------------------------//
 		//SET A VALUE FOR disable_mobile_view. Default=no.
 		searchParams += '&:disable_mobile_view=yes';
 		//SET A VALUE FOR language. Default=en List of supported languages: https://help.sigmacomputing.com/docs/manage-workbook-localization#supported-languages-and-locales
@@ -97,13 +98,13 @@ app.get('/api/generate-embed-url', (req, res) => {
 		searchParams += '&:ua_Region=West';
 		//Sets the workbook creator's name (instead of email) in embed menus and system-generated emails. DEFAULT=
 		// searchParams += '&:use_user_name=Bob Smith';
-		//PASSES A SECURE TOKEN TO SIGMA THAT AUTHENTICATES CONNECTIONS USING OAUTH
+		// PASSES A SECURE TOKEN TO SIGMA THAT AUTHENTICATES CONNECTIONS USING OAUTH
 		// searchParams += '&:oauth_token={token}';
 
-		//-- Additional parameters end --//
+		//-------------------------- Additional parameters end -------------------------- //
 		
 
-        // 7: Construct the URL with search parameters and generate a signature
+        // Construct the URL with search parameters and generate a signature
         const URL_WITH_SEARCH_PARAMS = EMBED_PATH + searchParams;
         const SIGNATURE = crypto
             .createHmac('sha256', Buffer.from(EMBED_SECRET, 'utf8'))
@@ -111,7 +112,7 @@ app.get('/api/generate-embed-url', (req, res) => {
             .digest('hex');
         const URL_TO_SEND = `${URL_WITH_SEARCH_PARAMS}&:signature=${SIGNATURE}`;
 
-        // 8: Send the final URL to the requester
+        // Send the final URL to the requester
         res.status(200).json({ url: URL_TO_SEND });
     } catch (error) {
         console.error('Error generating embed URL:', error.message);
@@ -119,7 +120,7 @@ app.get('/api/generate-embed-url', (req, res) => {
     }
 });
 
-// 9: Start the server
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
