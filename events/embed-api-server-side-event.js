@@ -1,5 +1,6 @@
 // --------------- SERVER-SIDE EMBED API start -------------- // 
 
+require('dotenv').config()
 // SIGMA SERVER-SIDE EMBED API - Events URL
 
 // 1: Require necessary Node.js modules

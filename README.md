@@ -13,9 +13,9 @@ There's a public team called [Grace Test Embed Team](https://app.sigmacomputing.
 - Using the variables defined in the `.sample.env` file of this repo, configure your own `.env` file 
 - Run `npm start` command to start up the server. node-supervisor should watch files for changes, but if you need to restart the server run `rs`
 - Test code in the `/events` directory with
-    - `npm start events-inbound`
-    - `npm start events-outbound`
-    - `npm start events-api-server-side`
+    - `npm run events-inbound`
+    - `npm run events-outbound`
+    - `npm run events-api-server-side`
 - Test code in the `/jwt` directory with
-    - `npm start jwt`
+    - `npm run jwt`
 - Follow instructions in the READ.md file in `/embed-sdk-react` to test out react sdk (run with `pnpm run dev` from _within the `/embed-sdk-react` directory_)
