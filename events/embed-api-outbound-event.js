@@ -11,7 +11,7 @@ const crypto = require('crypto');
 const app = express();
 
 // 3: Manually set your configuration variables here (example values shown)
-const EMBED_PATH = process.env.EMBED_PATH;
+const EMBED_PATH = process.env.EMBED_EVENT_PATH;
 const CLIENT_ID = process.env.CLIENT_ID;
 const EMBED_SECRET = process.env.EMBED_SECRET;
 const PORT = process.env.PORT; // Feel free to change the port number as needed
@@ -39,9 +39,9 @@ app.get('/api/generate-embed-url-outbound-event', (req, res) => {
         searchParams += `&:time=${Math.floor(new Date().getTime() / 1000)}`;
         //APPEND WORKBOOK PAGE VARIABLES TO URL:
 	        // SYNTAX FOR SINGLE VALUE:
-		       // searchParams += `&${encodeURIComponent('StoreRegion')}=${encodeURIComponent('West')}`;
+		       searchParams += `&${encodeURIComponent('StoreRegion')}=${encodeURIComponent('West')}`;
 	        // SYNTAX FOR MULTIPLE VALUES:  
-	  	          searchParams += `&${encodeURIComponent('StoreRegion')}=${encodeURIComponent('Southwest')},${encodeURIComponent('Midwest')}`;
+	  	        //   searchParams += `&${encodeURIComponent('StoreRegion')}=${encodeURIComponent('Southwest')},${encodeURIComponent('Midwest')}`;
 
         // 7: Construct the URL with search parameters and generate a signature
         const URL_WITH_SEARCH_PARAMS = EMBED_PATH + searchParams;

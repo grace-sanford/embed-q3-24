@@ -6,7 +6,7 @@
 	
 </head>
 
-	<!-- Script to Add Event Listener to Parent Application -->
+	<!--- Script to Add Event Listener to Parent Application -->
 	<script>
 		window.addEventListener('message', function (event) {
 			if (
@@ -29,7 +29,7 @@
 				console.log(SigmaMessage);	
 		} 
 	}});
-</script> 
+</script>
 
 </head>
 
@@ -39,16 +39,16 @@
 	<h2>My Parent Application</h2>
 	<lable>The Embed user selected these Store Regions to Filter:</lable>
 	
-	Display the current values for the Embedded droplist filter
+	<!-- Display the current values for the Embedded droplist filter-->
 	<input type="text" id="StoreRegions" style="width: 300px" style="height: 500px">;
 	<br><br>
 	
-	Setup iframe for Sigma Embed to render in
+	<!--- Setup iframe for Sigma Embed to render in -->
 	<iframe id="sigmaDashboard" width="700px" height="700px"></iframe>
 		<script>
 			 const sigmaDashboard = document.getElementById('sigmaDashboard');
 			 const URL = "http://localhost:3000/api/generate-embed-url-outbound-event";
-		     // URL below comes from API call to server.js
+		     // URL below comes from API call to server.js -->
 			 fetch(URL)
 			 .then(data=>{return data.json()})
 			 // Set the response url to "sigmaDashboard. This object used in the scripts"
@@ -56,5 +56,5 @@
 			 .catch(e=>console.log(e));
 		</script>
 
-	 </body> 
+	 </body>
 </html>

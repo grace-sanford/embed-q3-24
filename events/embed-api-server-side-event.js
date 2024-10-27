@@ -11,7 +11,7 @@ const crypto = require('crypto');
 const app = express();
 
 // 3: Manually set your configuration variables here (example values shown)
-const EMBED_PATH = process.env.EMBED_PATH;
+const EMBED_PATH = process.env.EMBED_EVENT_PATH;
 const CLIENT_ID = process.env.CLIENT_ID;
 const EMBED_SECRET = process.env.EMBED_SECRET;
 const PORT = process.env.PORT;// Feel free to change the port number as needed
