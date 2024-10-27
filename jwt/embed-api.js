@@ -13,7 +13,7 @@ const SESSION_LENGTH = Math.min(process.env.SESSION_LENGTH || 3600, 2592000); //
 // Log important configuration details to ensure they are correctly set
 console.log('BASE_URL:', BASE_URL);
 console.log('SESSION_LENGTH:', SESSION_LENGTH);
-console.log('EMBED_CLIENT_ID:', process.env.EMBED_CLIENT_ID); // Verify the client ID
+console.log('EMBED_CLIENT_ID:', process.env.CLIENT_ID); // Verify the client ID
 
 // Function to generate a signed URL for embedding Sigma dashboards
 async function generateSignedUrl() {
@@ -35,7 +35,7 @@ async function generateSignedUrl() {
             teams: ["Grace Test Embed Team"] // Optional claim for user teams
         }, secret, {
             algorithm: 'HS256', // Algorithm used for signing the JWT
-            keyid: process.env.EMBED_CLIENT_ID // Key ID for the JWT header, should match Sigma's expectations
+            keyid: process.env.CLIENT_ID // Key ID for the JWT header, should match Sigma's expectations
         });
 
         // Decode the JWT to inspect its content and log it
