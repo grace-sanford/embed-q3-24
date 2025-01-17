@@ -62,44 +62,45 @@ app.get('/api/generate-embed-url', (req, res) => {
 
 		//-------------------------- Additional parameters start --------------------------//
 		//SET A VALUE FOR disable_mobile_view. Default=no.
-		searchParams += '&:disable_mobile_view=yes';
-		//SET A VALUE FOR language. Default=en List of supported languages: https://help.sigmacomputing.com/docs/manage-workbook-localization#supported-languages-and-locales
-		//searchParams += '&:lng=fa-ca';
-		//SET A VALUE FOR first_name. Default=Embed.
-		// searchParams += '&:first_name=Bob';
-		//SET A VALUE FOR hide_folder_navigation. Default=false.
-		searchParams += '&:hide_folder_navigation=false';
-		//HIDE THE MENU IN BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
-		searchParams += '&:hide_menu=false';
-		//HIDE THE "SCHEDULE NOW" OPTION IN THE BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
-		//searchParams += '&:hide_schedule=false';
-		//HIDE THE "SEND NOW" OPTION IN THE BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
-		searchParams += '&:hide_send=true';
-		//HIDE SHEET INTERACTIONS OPTION FROM EMBED USERS. DEFAULT=false
-		searchParams += '&:hide_sheet_interactions=false';
-		//SET A VALUE FOR hide_tooltip. Default=false.
-		searchParams += '&:hide_tooltip=true';
-		//SET A VALUE FOR hide_workbook_name. Default=false.
-		searchParams += '&:hide_workbook_name=true';
-		//SET A VALUE FOR last_name. Default=User.
-		// searchParams += '&:last_name=Smith';
-		//SET A COLOR FOR THE BACKGROUND ON LOADING AND ERROR SCREENS
-		searchParams += '&:loading_bg=FF0000';
-		//SET A COLOR FOR THE FONT ON LOADING AND ERROR SCREENS 
-		searchParams += '&:loading_text=FFFFFF';
-		//SET THE POSITION OF THE TOOLBAR. DEFAULT = "bottom".
-		// searchParams += '&:menu_position=top';
-		//ENABLE JAVASCRIPT EVENT FOR responsive_height. DEFAULT = "false".
-		searchParams += '&:responsive_height=true';
-		//SHOW FOOTER ON PAGE OR NOT. DEFAULT = "true".
-		searchParams += '&:show_footer=true';
-		//CHANGE THEME SIGMA WILL USE FOR THE EMBED. DEFAULT = "Light".
-		searchParams += '&:theme=Dark';
-		searchParams += '&:ua_Region=West';
-		//Sets the workbook creator's name (instead of email) in embed menus and system-generated emails. DEFAULT=
-		// searchParams += '&:use_user_name=Bob Smith';
-		// PASSES A SECURE TOKEN TO SIGMA THAT AUTHENTICATES CONNECTIONS USING OAUTH
-		// searchParams += '&:oauth_token={token}';
+		// searchParams += '&:disable_mobile_view=yes';
+		// //SET A VALUE FOR language. Default=en List of supported languages: https://help.sigmacomputing.com/docs/manage-workbook-localization#supported-languages-and-locales
+		// //searchParams += '&:lng=fa-ca';
+		// //SET A VALUE FOR first_name. Default=Embed.
+		// // searchParams += '&:first_name=Bob';
+		// //SET A VALUE FOR hide_folder_navigation. Default=false.
+		// searchParams += '&:hide_folder_navigation=false';
+		// //HIDE THE MENU IN BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
+		// searchParams += '&:hide_menu=false';
+		// //HIDE THE "SCHEDULE NOW" OPTION IN THE BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
+		// //searchParams += '&:hide_schedule=false';
+		// //HIDE THE "SEND NOW" OPTION IN THE BOTTOM-LEFT CORNER FROM EMBED USERS. DEFAULT=false
+		// searchParams += '&:hide_send=true';
+		// //HIDE SHEET INTERACTIONS OPTION FROM EMBED USERS. DEFAULT=false
+		// searchParams += '&:hide_sheet_interactions=false';
+		// //SET A VALUE FOR hide_tooltip. Default=false.
+		// searchParams += '&:hide_tooltip=true';
+		// //SET A VALUE FOR hide_workbook_name. Default=false.
+		// searchParams += '&:hide_workbook_name=true';
+		// //SET A VALUE FOR last_name. Default=User.
+		// // searchParams += '&:last_name=Smith';
+		// //SET A COLOR FOR THE BACKGROUND ON LOADING AND ERROR SCREENS
+		// searchParams += '&:loading_bg=FF0000';
+		// //SET A COLOR FOR THE FONT ON LOADING AND ERROR SCREENS 
+		// searchParams += '&:loading_text=FFFFFF';
+		// //SET THE POSITION OF THE TOOLBAR. DEFAULT = "bottom".
+		// // searchParams += '&:menu_position=top';
+		// //ENABLE JAVASCRIPT EVENT FOR responsive_height. DEFAULT = "false".
+		// searchParams += '&:responsive_height=true';
+		// //SHOW FOOTER ON PAGE OR NOT. DEFAULT = "true".
+		// searchParams += '&:show_footer=true';
+		// //CHANGE THEME SIGMA WILL USE FOR THE EMBED. DEFAULT = "Light".
+		// searchParams += '&:theme=Dark';
+		// searchParams += '&:ua_Region=West';
+		// //Sets the workbook creator's name (instead of email) in embed menus and system-generated emails. DEFAULT=
+		// // searchParams += '&:use_user_name=Bob Smith';
+		// // PASSES A SECURE TOKEN TO SIGMA THAT AUTHENTICATES CONNECTIONS USING OAUTH
+		// // searchParams += '&:oauth_token={token}';
+		searchParams += `&:eval_connection_id=b8389b9b-ad74-4d28-952b-c3460492c398`
 
 		//-------------------------- Additional parameters end -------------------------- //
 		
